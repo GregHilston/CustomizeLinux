@@ -54,3 +54,6 @@ $ ./customize.sh
   * Best C/C++ IDE 
 * android studio
   * I hate eclipse... 
+* nethack
+  * No other game is needed 
+  

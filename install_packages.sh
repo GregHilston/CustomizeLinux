@@ -15,7 +15,7 @@ echo "Set wallpaper" > output.log
 apt-get  update
 apt-get -y upgrade
 apt-get -y dist-upgrade 
-apt-get install -y guake vim chromium-browser virtualbox filezilla vlc gparted git conky cowsay
+apt-get install -y guake vim chromium-browser virtualbox filezilla vlc gparted git conky cowsay nethack-console
 echo "Regarding virtualbox, don't forget to install guest additions in the guest OS guide here http://askubuntu.com/questions/22743/how-do-i-install-guest-additions-in-a-virtualbox-vm" >> output.log
 echo "and extension pack here https://www.virtualbox.org/wiki/Downloads" >> output.log
 
