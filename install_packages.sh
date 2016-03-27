@@ -3,30 +3,40 @@
 # Make sure only root can run our script (http://www.cyberciti.biz/tips/shell-root-user-check-script.html)
 if [[ $EUID -ne 0 ]]; then
    echo "This script must be run as root!" 1>&2
+   echo "This script must be run as root!" > output.log
    exit 1
 fi
+
+# Set wallpaper
+gsettings set org.gnome.desktop.background picture-uri file:////home/grehg/Git/DebainBasedCustomizer/wallpaper.jpg # (http://askubuntu.com/questions/156713/change-desktop-background-from-terminal)
+echo "Set wallpaper" > output.log
 
 # Update the system
 apt-get  update
 apt-get -y upgrade
 apt-get -y dist-upgrade 
 apt-get install -y guake vim chromium-browser virtualbox filezilla vlc gparted git conky cowsay
-echo "Regarding virtualbox, don't forget to install guest additions in the guest OS guide here http://askubuntu.com/questions/22743/how-do-i-install-guest-additions-in-a-virtualbox-vm"
-echo "and extension pack here https://www.virtualbox.org/wiki/Downloads"
+echo "Regarding virtualbox, don't forget to install guest additions in the guest OS guide here http://askubuntu.com/questions/22743/how-do-i-install-guest-additions-in-a-virtualbox-vm" >> output.log
+echo "and extension pack here https://www.virtualbox.org/wiki/Downloads" >> output.log
 
 # Make guake run on boot
-# NOT WORKING ln -s /usr/share/applications/guake.desktop /etc/xdg/autostart/ (http://askubuntu.com/questions/368705/how-to-make-guake-start-at-login)
+ln -s /usr/share/applications/guake.desktop /etc/xdg/autostart/ # (http://askubuntu.com/questions/368705/how-to-make-guake-start-at-login)
+echo "Regarding guake, run guake and uncheck Enable notifications on startup " >> output.log
+
+# Make conky run on boot
+cp conky.desktop /usr/share/applications/
+ln -s /usr/share/applications/conky.desktop /etc/xdg/autostart/ # (https://forums.linuxmint.com/viewtopic.php?t=101506)
 
 #Configure git
 git config --global user.email "Gregory.Hilston@gmail.com"
 git config --global user.name "GregHilston"
 
 # Install Cinnamon, Java 8, Sublime Text 3, Pidgin and Skype
-add-apt-repository ppa:lestcape/cinnamon 											# Install Cinnamon (http://www.webupd8.org/2014/12/install-cinnamon-24-stable-in-ubuntu.html)
-sudo add-apt-repository -y ppa:webupd8team/java 										# Install Java 8 (http://askubuntu.com/questions/634082/how-to-install-android-studio-on-ubuntu)
-add-apt-repository -y ppa:webupd8team/sublime-text-3 								 	# Install Sublime Text 3 (http://askubuntu.com/questions/172698/how-do-i-install-sublime-text-2-3)
-sudo add-apt-repository -y ppa:pidgin-developers/ppa
-add-apt-repository "deb http://archive.canonical.com/ $(lsb_release -sc) partner" 	# Install Skype (http://askubuntu.com/questions/293693/how-to-install-skype-with-ubuntu-13-04)#
+add-apt-repository ppa:lestcape/cinnamon 												# Install cinnamon 		 (http://www.webupd8.org/2014/12/install-cinnamon-24-stable-in-ubuntu.html)
+sudo add-apt-repository -y ppa:webupd8team/java 										# Install java 8  		 (http://askubuntu.com/questions/634082/how-to-install-android-studio-on-ubuntu)
+add-apt-repository -y ppa:webupd8team/sublime-text-3 								 	# Install sublime-text-3 (http://askubuntu.com/questions/172698/how-do-i-install-sublime-text-2-3)
+sudo add-apt-repository -y ppa:pidgin-developers/ppa 									# Install pidgin 		 (http://askubuntu.com/questions/307622/update-pidgin-using-apt-get)
+add-apt-repository "deb http://archive.canonical.com/ $(lsb_release -sc) partner" 		# Install skype 		 (http://askubuntu.com/questions/293693/how-to-install-skype-with-ubuntu-13-04)#
 apt-get update
 apt-get install -y cinnamon oracle-java8-installer oracle-java8-set-default sublime-text-installer pidgin skype
 
@@ -65,6 +75,3 @@ tar xfz /tmp/clion.tar.gz
 cd /tmp/
 wget https://dl.google.com/dl/android/studio/ide-zips/1.5.1.0/android-studio-ide-141.2456560-linux.zip
 unzip android-studio-ide-141.2456560-linux.zip -d /opt/
-
-# Changing terminal background and foreground color
-setterm -term linux -back black -fore white -clea

@@ -1,0 +1,93 @@
+# conky configuration
+#
+# The list of variables has been removed from this file in favour
+# of keeping the documentation more maintainable.
+# Check http://conky.sf.net for an up-to-date-list.
+#
+# For ideas about how to modify conky, please see:
+# http://crunchbanglinux.org/forums/topic/59/my-conky-config/
+#
+# For help with conky, please see:
+# http://crunchbanglinux.org/forums/topic/2047/conky-help/
+#
+# Enjoy! :)
+##############################################
+#  Settings
+##############################################
+ background yes
+    use_xft yes
+    xftfont HandelGotD:size=8
+    xftalpha 0.5
+    update_interval 1.0
+    total_run_times 0
+    own_window yes
+    own_window_type dock # dock instead of normal to stay visible when using CTRL + D on Cinnamon
+    own_window_transparent yes
+    own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+    own_window_argb_visual yes
+    double_buffer yes
+    minimum_size 200 5
+    maximum_width 220
+    draw_shades no
+    draw_outline no
+    draw_borders no
+    draw_graph_borders yes
+    default_color 393939
+    default_shade_color white
+    default_outline_color white
+    alignment top_right
+    gap_x 10
+    gap_y 10
+    no_buffers yes
+    uppercase no
+    cpu_avg_samples 2
+    override_utf8_locale no
+
+TEXT
+#${font sans-serif:bold:size=8}DATE ${hr 2}
+#${alignc 35}${color white}${font Trebuchet MS:size=26}${time %H:%M}${font}
+${alignr}${color black}${time %a %d %b %Y}
+#
+${font sans-serif:bold:size=8}${color 393939}SYSTEM ${hr 2}
+${font sans-serif:normal:size=8}$sysname $kernel $alignr $machine
+Host:$alignr$nodename
+Uptime:$alignr$uptime
+File System: $alignr${fs_type}
+
+${font sans-serif:bold:size=8}PROCESSORS ${hr 2}
+${font sans-serif:normal:size=8}Temperature: $alignr ${platform coretemp.0 temp 1}${iconv_start UTF-8 ISO_8859-1}°${iconv_stop}C
+${cpugraph cpu0 393939 0000ff}
+CPU1: ${cpu cpu1}% ${cpubar cpu1 6,43} CPU2: ${cpu cpu2}% ${cpubar cpu2}
+CPU3: ${cpu cpu3}% ${cpubar cpu3 6,43} CPU4: ${cpu cpu4}% ${cpubar cpu4}
+# Uncomment bello to support more CPUs
+#CPU5: ${cpu cpu5}% ${cpubar cpu5 6,43} CPU6: ${cpu cpu6}% ${cpubar cpu6}
+#CPU7: ${cpu cpu7}% ${cpubar cpu7 6,43} CPU8: ${cpu cpu8}% ${cpubar cpu8}
+
+${font sans-serif:bold:size=8}MEMORY ${hr 2}
+${font sans-serif:normal:size=8}RAM $alignc $mem / $memmax $alignr $memperc%
+$membar
+
+${font sans-serif:bold:size=8}DISKS ${hr 2}
+${font sans-serif:normal:size=8}/ $alignc ${fs_used /} / ${fs_size /} $alignr ${fs_used_perc /}%
+${fs_bar /}
+${diskiograph 393939 ff0000}
+
+#
+#SWAP $alignc ${swap} / ${swapmax} $alignr ${swapperc}%
+#${swapbar}
+#
+${font sans-serif:bold:size=8}PROCESSES ${hr 2}
+${font sans-serif:normal:size=8}${top_mem name 1}${alignr}${top mem 1} %
+${top_mem name 2}${alignr}${top mem 2} %
+${top_mem name 3}${alignr}${top mem 3} %
+${top_mem name 4}${alignr}${top mem 4} %
+${top_mem name 5}${alignr}${top mem 5} %
+
+${font sans-serif:bold:size=8}NETWORK ${hr 2}
+${font sans-serif:normal:size=8}IP address: $alignr ${addr wlan0}
+#ESSID: $alignr ${wireless_essid eth1}
+Connection quality: $alignr ${wireless_link_qual_perc wlan0}%
+${downspeedgraph wlan0 393939 008000}
+down:${downspeed wlan0} kb/s $alignr total: ${totaldown wlan0}
+${upspeedgraph wlan0 393939 FFFF00}
+up:${upspeed wlan0} kb/s $alignr total: ${totalup wlan0}
