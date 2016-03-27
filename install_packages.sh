@@ -18,7 +18,7 @@ echo "and extension pack here https://www.virtualbox.org/wiki/Downloads"
 # NOT WORKING ln -s /usr/share/applications/guake.desktop /etc/xdg/autostart/ (http://askubuntu.com/questions/368705/how-to-make-guake-start-at-login)
 
 #Configure git
-	git config --global user.email "Gregory.Hilston@gmail.com"
+git config --global user.email "Gregory.Hilston@gmail.com"
 git config --global user.name "GregHilston"
 
 # Install Cinnamon, Java 8, Sublime Text 3, Pidgin and Skype
@@ -65,3 +65,6 @@ tar xfz /tmp/clion.tar.gz
 cd /tmp/
 wget https://dl.google.com/dl/android/studio/ide-zips/1.5.1.0/android-studio-ide-141.2456560-linux.zip
 unzip android-studio-ide-141.2456560-linux.zip -d /opt/
+
+# Changing terminal background and foreground color
+setterm -term linux -back black -fore white -clea
