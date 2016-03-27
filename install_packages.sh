@@ -32,10 +32,10 @@ git config --global user.email "Gregory.Hilston@gmail.com"
 git config --global user.name "GregHilston"
 
 # Install Cinnamon, Java 8, Sublime Text 3, Pidgin and Skype
-add-apt-repository ppa:lestcape/cinnamon 												# Install cinnamon 		 (http://www.webupd8.org/2014/12/install-cinnamon-24-stable-in-ubuntu.html)
-sudo add-apt-repository -y ppa:webupd8team/java 										# Install java 8  		 (http://askubuntu.com/questions/634082/how-to-install-android-studio-on-ubuntu)
+add-apt-repository -y ppa:lestcape/cinnamon 												# Install cinnamon 		 (http://www.webupd8.org/2014/12/install-cinnamon-24-stable-in-ubuntu.html)
+add-apt-repository -y ppa:webupd8team/java 										# Install java 8  		 (http://askubuntu.com/questions/634082/how-to-install-android-studio-on-ubuntu)
 add-apt-repository -y ppa:webupd8team/sublime-text-3 								 	# Install sublime-text-3 (http://askubuntu.com/questions/172698/how-do-i-install-sublime-text-2-3)
-sudo add-apt-repository -y ppa:pidgin-developers/ppa 									# Install pidgin 		 (http://askubuntu.com/questions/307622/update-pidgin-using-apt-get)
+add-apt-repository -y ppa:pidgin-developers/ppa 									# Install pidgin 		 (http://askubuntu.com/questions/307622/update-pidgin-using-apt-get)
 add-apt-repository "deb http://archive.canonical.com/ $(lsb_release -sc) partner" 		# Install skype 		 (http://askubuntu.com/questions/293693/how-to-install-skype-with-ubuntu-13-04)#
 apt-get update
 apt-get install -y cinnamon oracle-java8-installer oracle-java8-set-default sublime-text-installer pidgin skype
