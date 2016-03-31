@@ -2,7 +2,7 @@
 set number
 
 " Visible vertical line at 80 characters (MAD ugly. Need to update)
-set colorcolumn=80
+" set colorcolumn=80
 
 " Show command in bottom bar
 set showcmd
