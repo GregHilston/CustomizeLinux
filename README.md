@@ -56,4 +56,5 @@ $ ./customize.sh
   * I hate eclipse... 
 * nethack
   * No other game is needed 
-  
+* gimp
+  * to edit dank pictures 

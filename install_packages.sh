@@ -8,14 +8,14 @@ if [[ $EUID -ne 0 ]]; then
 fi
 
 # Set wallpaper
-gsettings set org.gnome.desktop.background picture-uri file:////home/grehg/Git/DebainBasedCustomizer/wallpaper.jpg # (http://askubuntu.com/questions/156713/change-desktop-background-from-terminal)
+gsettings set org.gnome.desktop.background picture-uri file:////home/grehg/Git/DebainBasedCustomizer/lannister_wallpaper.jpg # (http://askubuntu.com/questions/156713/change-desktop-background-from-terminal)
 echo "Set wallpaper" > output.log
 
 # Update the system
 apt-get  update
 apt-get -y upgrade
 apt-get -y dist-upgrade 
-apt-get install -y guake vim chromium-browser virtualbox filezilla vlc gparted git conky cowsay nethack-console
+apt-get install -y guake vim chromium-browser virtualbox filezilla vlc gparted git conky cowsay nethack-console gimp
 echo "Regarding virtualbox, don't forget to install guest additions in the guest OS guide here http://askubuntu.com/questions/22743/how-do-i-install-guest-additions-in-a-virtualbox-vm" >> output.log
 echo "and extension pack here https://www.virtualbox.org/wiki/Downloads" >> output.log
 
