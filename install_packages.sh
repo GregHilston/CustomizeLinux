@@ -15,10 +15,9 @@ echo "Set wallpaper" > output.log
 apt-get  update
 apt-get -y upgrade
 apt-get -y dist-upgrade 
-apt-get install -y guake vim chromium-browser virtualbox filezilla vlc gparted git conky cowsay nethack-console gimp deluge g++ make
+apt-get install -y guake vim  virtualbox filezilla vlc gparted git conky cowsay nethack-console gimp deluge g++ make
 
 echo "Regarding deluge and torguard, don't forget to set up deluge to use torguard as a proxy. There's a guide here https://torguard.net/knowledgebase.php?action=displayarticle&id=40" >> output.log
-
 
 echo "Regarding virtualbox, don't forget to install guest additions in the guest OS guide here http://askubuntu.com/questions/22743/how-do-i-install-guest-additions-in-a-virtualbox-vm" >> output.log
 echo "and extension pack here https://www.virtualbox.org/wiki/Downloads" >> output.log
@@ -48,6 +47,11 @@ apt-get install -y cinnamon oracle-java8-installer oracle-java8-set-default subl
 # Install Oracle's JDK 8 (http://askubuntu.com/questions/272314/setup-and-install-intellij-with-jdk)
 # echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections &&
 # update-java-alternatives -s java-8-oracle &&
+
+# Install Chrome Browser
+cd /tmp/
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+dpkg -i google-chrome-stable_current_amd64.deb
 
 # Install Team Viewer
 cd /tmp/
