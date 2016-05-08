@@ -49,6 +49,11 @@ apt-get install -y cinnamon oracle-java8-installer oracle-java8-set-default subl
 # echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | sudo /usr/bin/debconf-set-selections &&
 # update-java-alternatives -s java-8-oracle &&
 
+# Install Team Viewer
+cd /tmp/
+wget http://download.teamviewer.com/download/teamviewer_i386.deb
+dpkg -i teamviewer_11.0.57095_i386.deb
+
 # Install Google Music
 cd /tmp/
 wget https://github-cloud.s3.amazonaws.com/releases/40008106/9036d91e-e790-11e5-81fe-0fec2ae693c9.deb?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAISTNZFOVBIJMK3TQ%2F20160326%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20160326T231505Z&X-Amz-Expires=300&X-Amz-Signature=a0062299cc92051bd571e5c52ed9728115b1602166d3e4718eff16946fc4de6c&X-Amz-SignedHeaders=host&actor_id=4227776&response-content-disposition=attachment%3B%20filename%3Dgoogle-play-music-desktop-player_3.0.1_amd64.deb&response-content-type=application%2Foctet-stream
