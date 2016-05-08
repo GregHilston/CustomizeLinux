@@ -58,3 +58,5 @@ $ ./customize.sh
   * No other game is needed 
 * gimp
   * to edit dank pictures 
+* deluge
+  * for linux ISOs yo

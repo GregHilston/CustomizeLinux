@@ -15,7 +15,11 @@ echo "Set wallpaper" > output.log
 apt-get  update
 apt-get -y upgrade
 apt-get -y dist-upgrade 
-apt-get install -y guake vim chromium-browser virtualbox filezilla vlc gparted git conky cowsay nethack-console gimp
+apt-get install -y guake vim chromium-browser virtualbox filezilla vlc gparted git conky cowsay nethack-console gimp deluge g++ make
+
+echo "Regarding deluge and torguard, don't forget to set up deluge to use torguard as a proxy. There's a guide here https://torguard.net/knowledgebase.php?action=displayarticle&id=40" >> output.log
+
+
 echo "Regarding virtualbox, don't forget to install guest additions in the guest OS guide here http://askubuntu.com/questions/22743/how-do-i-install-guest-additions-in-a-virtualbox-vm" >> output.log
 echo "and extension pack here https://www.virtualbox.org/wiki/Downloads" >> output.log
 
@@ -59,16 +63,16 @@ dkpg -i Messenger_linux64.deb
 cd /opt/
 mkdir idea
 cd /opt/idea
-wget -O /tmp/intellij.tar.gz https://download.jetbrains.com/idea/ideaIU-2016.1.tar.gz
+wget -O https://d1opms6zj7jotq.cloudfront.net/idea/ideaIU-2016.1.1.tar.gz # Old URL /tmp/intellij.tar.gz https://download.jetbrains.com/idea/ideaIU-2016.1.tar.gz
 tar xfz /tmp/intellij.tar.gz 
 
 # Install PyCharm
 cd /opt/idea/
-wget -O /tmp/pycharm.tar.gz https://download.jetbrains.com/python/pycharm-professional-2016.1.tar.gz
+wget -O https://d1opms6zj7jotq.cloudfront.net/python/pycharm-professional-2016.1.2.tar.gz # Old URL /tmp/pycharm.tar.gz https://download.jetbrains.com/python/pycharm-professional-2016.1.tar.gz
 tar xfz /tmp/pycharm.tar.gz 
 
 # Install Clion
-wget -O /tmp/clion.tar.gz https://download.jetbrains.com/cpp/CLion-2016.1.tar.gz
+wget -O https://d1opms6zj7jotq.cloudfront.net/cpp/CLion-2016.1.1.tar.gz # Old URL /tmp/clion.tar.gz https://download.jetbrains.com/cpp/CLion-2016.1.tar.gz
 tar xfz /tmp/clion.tar.gz 
 
 # Install Android Studio (http://askubuntu.com/questions/634082/how-to-install-android-studio-on-ubuntu)
