@@ -15,16 +15,19 @@ echo "Set wallpaper" > output.log
 apt-get  update
 apt-get -y upgrade
 apt-get -y dist-upgrade 
-apt-get install -y guake vim  virtualbox filezilla vlc gparted git conky cowsay nethack-console gimp deluge g++ make
+apt-get install -y guake vim  virtualbox filezilla vlc gparted git conky cowsay nethack-console gimp deluge g++ make redshit okular shutter textmaker  unoconv texlive-science
 
-echo "Regarding deluge and torguard, don't forget to set up deluge to use torguard as a proxy. There's a guide here https://torguard.net/knowledgebase.php?action=displayarticle&id=40" >> output.log
+echo "Finished: update, upgrade, dist-upgrade" >> output.log
+echo "Installed: guake vim  virtualbox filezilla vlc gparted git conky cowsay nethack-console gimp deluge g++ make redshit" >> output.log
 
-echo "Regarding virtualbox, don't forget to install guest additions in the guest OS guide here http://askubuntu.com/questions/22743/how-do-i-install-guest-additions-in-a-virtualbox-vm" >> output.log
+echo "\t Note: Regarding deluge and torguard, don't forget to set up deluge to use torguard as a proxy. There's a guide here https://torguard.net/knowledgebase.php?action=displayarticle&id=40" >> output.log
+
+echo "\t Note: Regarding virtualbox, don't forget to install guest additions in the guest OS guide here http://askubuntu.com/questions/22743/how-do-i-install-guest-additions-in-a-virtualbox-vm" >> output.log
 echo "and extension pack here https://www.virtualbox.org/wiki/Downloads" >> output.log
 
 # Make guake run on boot
 ln -s /usr/share/applications/guake.desktop /etc/xdg/autostart/ # (http://askubuntu.com/questions/368705/how-to-make-guake-start-at-login)
-echo "Regarding guake, run guake and uncheck Enable notifications on startup " >> output.log
+echo "\t Note: Regarding guake, run guake and uncheck Enable notifications on startup " >> output.log
 
 # Make conky run on boot
 cp conky.desktop /usr/share/applications/
@@ -86,5 +89,5 @@ tar xfz /tmp/clion.tar.gz
 
 # Install Android Studio (http://askubuntu.com/questions/634082/how-to-install-android-studio-on-ubuntu)
 cd /tmp/
-wget https://dl.google.com/dl/android/studio/ide-zips/1.5.1.0/android-studio-ide-141.2456560-linux.zip
-unzip android-studio-ide-141.2456560-linux.zip -d /opt/
+wget https://dl.google.com/dl/android/studio/ide-zips/2.1.0.9/android-studio-ide-143.2790544-linux.zip
+unzip android-studio-ide-143.2790544-linux.zip -d /opt/
