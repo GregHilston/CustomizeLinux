@@ -47,7 +47,7 @@ main() {
 	gsettings set org.gnome.desktop.background picture-uri file:////home/grehg/Git/DebainBasedCustomizer/lannister_wallpaper.jpg # (http://askubuntu.com/questions/156713/change-desktop-background-from-terminal)
 	echo "Set wallpaper"
 
-	apt-get install -y guake vim virtualbox filezilla vlc gparted git conky cowsay nethack-console gimp deluge g++ make redshit okular shutter textmaker  unoconv texlive-science
+	apt-get install -y guake vim i3 virtualbox filezilla vlc gparted git conky cowsay nethack-console gimp deluge g++ make redshit okular shutter textmaker  unoconv texlive-science
 
 	echo "Installed: guake vim  virtualbox filezilla vlc gparted git conky cowsay nethack-console gimp deluge g++ make redshit"
 
